@@ -41,15 +41,7 @@ class singlyll {
         }
     }
     addBack(val){
-        let newNode = new Node(val);
-        let current = this.head; 
-        while(current !== null){
-            if (current.next == null){
-                current = newNode
-            }
-            current = current.next;
-        }
-        return current
+        
     }
 }
 const ll = new singlyll();
