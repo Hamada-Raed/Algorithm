@@ -18,6 +18,7 @@ function BinarySearch(arr, val){
 }
 console.log(BinarySearch([1,2,3,4],5))
 
+
 let arr = [1,2,3,4,5];
 function BinarySearch(arr, start, end, key) {
     if(start > end) return -1;

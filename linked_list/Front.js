@@ -9,16 +9,25 @@ class singlyLL {
     constructor() {
         this.head = null
     }
-
-    addFirst(data) {
+    addFirst(data){
         let newNode = new Node(data);
         if (this.head == null) {
             this.head = newNode;
             return this
         }
-        newNode.next = this.head
+        newNode.next = this.head 
         this.head = newNode;
         return this
+    }
+    addBack(data){
+        let newNode = new Node(data);
+        let current = this.head;
+        while(current.next !== null){
+            current = current.next;
+        }
+        console.log(current.next)
+
+
     }
     removeFront() {
         this.head = this.head.next

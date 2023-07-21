@@ -20,7 +20,7 @@ class singlyll {
     }
     Back() { // print the last element in the linkedlist
         let current = this.head;
-        while (current !== null) {
+        while(current) {
             if (current.next == null);
             console.log(current.data);
             return this
@@ -40,13 +40,47 @@ class singlyll {
             current = current.next;
         }
     }
-    addBack(val){
-        
+    append(value) {
+        const newNode = new Node(value);
+        if (!this.head) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            this.tail.next = newNode;
+            this.tail = newNode;
+        }
+    }
+
+    // Search for a node with the given value
+    find(value) {
+        let currentNode = this.head;
+        while (currentNode) {
+            if (currentNode.value === value) {
+                return currentNode;
+            }
+            currentNode = currentNode.next;
+        }
+        return null;
+    }
+
+    // Convert the linked list to an array for easier visualization
+    toArray() {
+        const result = [];
+        let currentNode = this.head;
+        while (currentNode) {
+            result.push(currentNode.value);
+            currentNode = currentNode.next;
+        }
+        return result;
     }
 }
-const ll = new singlyll();
-ll.addFront(100);
-ll.addFront(100);
-ll.addFront(200);
-console.log(ll)
-console.log(ll.deleteLastNode())
+
+const linkedList = new singlyll();
+linkedList.append(1);
+linkedList.append(2);
+linkedList.prepend(0);
+console.log(linkedList.toArray()); // Output: [0, 1, 2]
+linkedList.remove(1);
+console.log(linkedList.toArray()); // Output: [0, 2]
+console.log(linkedList.find(2)); // Output: Node { value: 2, next: null }
+
