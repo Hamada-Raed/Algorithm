@@ -26,8 +26,6 @@ class singlyLL {
             current = current.next;
         }
         console.log(current.next)
-
-
     }
     removeFront() {
         this.head = this.head.next
