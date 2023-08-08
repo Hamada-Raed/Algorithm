@@ -62,10 +62,6 @@ function removeShorter(arr, val) {
 }
 console.log(removeShorter(['Hello', 'World!', "Hamada Raed"], 7))
 
-
-
-
-
 // find the word that lowest letters
 function removeShorter(str) {
     count = 0
