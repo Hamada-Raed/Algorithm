@@ -7,7 +7,7 @@ function isAlphabetical(word) {
     }
     return true;
 }
-console.log(isAlphabetical("eee")); 
+console.log(isAlphabetical("eee"));
 
 // D Gets Jiggy
 function DGetsJiggy(name) {
@@ -50,3 +50,39 @@ function largestCommonSuffix(words) {
 
 const input1 = ["deforestation", "citation", "conviction", "incarceration"];
 console.log(largestCommonSuffix(input1)); // Output: "tion"
+
+
+
+// Book Index
+function generateIndexString(pages) {
+    let indexString = '';
+    let startPage = pages[0];
+    let endPage = pages[0];
+
+    for (let i = 1; i < pages.length; i++) {
+        if (pages[i] === endPage + 1) {
+            endPage = pages[i];
+        } else {
+            if (startPage === endPage) {
+                indexString += startPage + ', ';
+            } else {
+                indexString += startPage + '-' + endPage + ', ';
+            }
+            startPage = pages[i];
+            endPage = pages[i];
+        }
+    }
+
+    if (startPage === endPage) {
+        indexString += startPage;
+    } else {
+        indexString += startPage + '-' + endPage;
+    }
+
+    return indexString;
+}
+
+// Example input
+const pages = [1, 13, 14, 15, 37, 38, 70, 71, 72];
+const indexString = generateIndexString(pages);
+console.log(indexString);  // Output: "1, 13-15, 37-38, 70"
