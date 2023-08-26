@@ -20,6 +20,13 @@ console.log(DGetsJiggy('hamada'))
 
 
 
+// if the words empty return null
+// the idea of initalize I reqiure a word to start check the suffix 
+// I wanna to iterate the all letter from the end of the word.
+// and while the word share with the suffix meet them togather.
+// then return the suffix  
+
+
 function largestCommonSuffix(words) {
     if (words.length === 0) {
         return "";
@@ -54,35 +61,37 @@ console.log(largestCommonSuffix(input1)); // Output: "tion"
 
 
 // Book Index
-function generateIndexString(pages) {
-    let indexString = '';
-    let startPage = pages[0];
-    let endPage = pages[0];
+    function generateIndexString(pages) {
+        let indexString = '';
+        let startPage = pages[0];
+        let endPage = pages[0];
 
-    for (let i = 1; i < pages.length; i++) {
-        if (pages[i] === endPage + 1) {
-            endPage = pages[i];
-        } else {
-            if (startPage === endPage) {
-                indexString += startPage + ', ';
+        for (let i = 1; i < pages.length; i++) {
+            if (pages[i] === endPage + 1) {
+                endPage = pages[i];
             } else {
-                indexString += startPage + '-' + endPage + ', ';
+                if (startPage === endPage) {
+                    indexString += startPage + ', ';
+                } else {
+                    indexString += startPage + '-' + endPage + ', ';
+                }
+                startPage = pages[i];
+                endPage = pages[i];
             }
-            startPage = pages[i];
-            endPage = pages[i];
         }
-    }
 
-    if (startPage === endPage) {
-        indexString += startPage;
-    } else {
-        indexString += startPage + '-' + endPage;
-    }
+        if (startPage === endPage) {
+            indexString += startPage;
+        } else {
+            indexString += startPage + '-' + endPage;
+        }
 
-    return indexString;
-}
+        return indexString;
+    }
 
 // Example input
 const pages = [1, 13, 14, 15, 37, 38, 70, 71, 72];
 const indexString = generateIndexString(pages);
-console.log(indexString);  // Output: "1, 13-15, 37-38, 70"
+console.log(indexString);  // Output: "1, 13-15, 37-38, 70" 
+
+
