@@ -11,3 +11,15 @@ function stringy(size) {
 }
 console.log(stringy(12))
 
+// remove specific char
+
+function remove(string, char){
+    let result = ""
+    for (var i=0; i<string.length; i++){
+        if (string[i] !== char){
+            result += string[i]
+        }
+    }
+    return result
+}
+console.log(remove('Hamada', 'a'))
