@@ -74,4 +74,46 @@ function getMiddle(s) {
     }
     return string
 }
-console.log(getMiddle('testing'))
+console.log(getMiddle('testing')) 
+
+
+////////////////////////////////// 
+
+function XO(str) {
+    let string = str.toUpperCase(); 
+    let countX = 0; 
+    let countO = 0; 
+    for (var i = 0; i < string.length; i++){
+        if (string[i] == 'X'){
+            countX++ 
+        }
+        else if (string[i] == 'O'){
+            countO++
+        }
+    }
+    if (countO == countX){
+        return true
+    }
+    return false
+}
+
+console.log(XO('xxooX')) 
+
+
+//////////////// 
+var fatFingers = function (str) {
+    
+};
+
+ //////////////// 
+
+// Years divisible by 4 are leap years,
+// but years divisible by 100 are not leap years,
+// but years divisible by 400 are leap years.
+function isLeapYear(year) {
+    if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
