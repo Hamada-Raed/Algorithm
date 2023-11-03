@@ -25,3 +25,17 @@ function accum(s) {
     }
     return result
 }
+
+////////////////////////////////////// 
+// decodeMorse('.... . -.--   .--- ..- -.. .')
+// //should return "HEY JUDE"
+// {
+//     ['.....'] : 'H'; 
+//     ['.'] : 'E'; 
+// }
+// Decode the Morse code 
+
+decodeMorse = function (morseCode) {
+    return morseCode.trim().split('   ').map(word => word.split(' ').map(code => MORSE_CODE[code]).join('')).join(' ');
+}
+
