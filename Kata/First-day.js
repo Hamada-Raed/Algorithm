@@ -39,3 +39,39 @@ decodeMorse = function (morseCode) {
     return morseCode.trim().split('   ').map(word => word.split(' ').map(code => MORSE_CODE[code]).join('')).join(' ');
 }
 
+//////////////////////////////// 
+String.prototype.toJadenCase = function () {
+    let str = this.split(' ')
+    console.log(str)
+    let JadenStr = '';
+    for (var i = 0; i < str.length; i++) {
+        for (var j = 0; j < str[i].length; j++) {
+            if (j == 0) {
+                JadenStr += str[i][j].toUpperCase();
+            }
+            else {
+                JadenStr += str[i][j].toLowerCase();
+            }
+        }
+        if (i != str.length - 1) {
+            JadenStr += ' '
+        }
+    }
+    return JadenStr
+};
+
+////////////////////////////////// 
+function getMiddle(s) {
+    let string = ''
+    let Qut = s.length % 2
+    if (Qut == 0) {
+        const midE = s.length / 2
+        string = s[midE - 1] + s[midE]
+    }
+    else {
+        const midO = Math.floor(s.length / 2)
+        string = s[midO]
+    }
+    return string
+}
+console.log(getMiddle('testing'))
