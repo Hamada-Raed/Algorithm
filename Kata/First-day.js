@@ -117,3 +117,67 @@ function isLeapYear(year) {
         return false;
     }
 }
+
+//////////////////////// 
+
+// Test.assertEquals(findDup([1, 2, 2, 3]), 2);
+// Test.assertEquals(findDup([1, 3, 2, 5, 4, 5, 7, 6]), 5);
+function findDup(arr) {
+    let dict = {};
+    for (var i = 0; i < arr.length; i++) {
+        const number = arr[i]
+        if (!dict[number]) {
+            dict[number] = 1
+        }
+        else {
+            dict[number] += 1;
+        }
+    }
+    for (const number in dict) {
+        const count = dict[number];
+        if (count >= 2) {
+            return +number
+        }
+    }
+}
+//////////////////////////// 
+function mostFrequentItemCount(collection) {
+  if (collection.length == 0){
+    return 0; 
+  }
+  let counts = {}; 
+  for (var i=0; i < collection.length; i++){
+    const number = collection[i]
+    if (!counts[number]){
+      counts[number] = 1
+    }
+    else {
+      counts[number] += 1 
+    }
+  }
+  let frequentItem = counts[collection[0]]
+  for (const number in counts){
+    if (frequentItem <= counts[number]){
+      frequentItem = counts[number]
+    }
+  }
+  return frequentItem
+}
+console.log(mostFrequentItemCount([1,2,2,3,1,4])) 
+///////////////////////////////// 
+
+function elevatorDistance(array) {
+
+    if (array.length < 2) {
+    return 0; // No movement required if there is only one or zero floor in the array.
+  }
+
+  let totalDistance = 0;
+  
+  for (let i = 1; i < array.length; i++) {
+    totalDistance += Math.abs(array[i] - array[i - 1]);
+  }
+  
+  return totalDistance;
+}
+
