@@ -180,4 +180,33 @@ function elevatorDistance(array) {
   
   return totalDistance;
 }
+/////////////////////////////
+var fatFingers = function (str) {
+    if (str == null) return null;
+    if (str == '') return '';
+    // a place to store the fat fingered string
+    let fatFingered = '';
+    // a place to store wether or not the current letter should be capitalized
+    // initialize to false
+    let capsLock = false;
+    // iterate over the string
+    for (let i = 0; i < str.length; i++) {
+        const letter = str[i];
+        // if the current letter is an a or A
+        if (letter == 'a' || letter == 'A') {
+            // set capsLock to true
+            capsLock = !capsLock;
+        } else {
+            // else append the current letter
+            // append capitalized based on our boolean
+            if (capsLock) {
+                fatFingered += letter.toUpperCase();
+            } else {
+                fatFingered += letter;
+            }
+        }
+    }
 
+    // return the fat fingered string
+    return fatFingered;
+};
