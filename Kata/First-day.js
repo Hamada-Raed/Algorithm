@@ -209,4 +209,28 @@ var fatFingers = function (str) {
 
     // return the fat fingered string
     return fatFingered;
-};
+}; 
+///////////////////////////////////// 
+
+function sumPairs(numbers, sum) {
+    const pairs = []; 
+    numbers.forEach(leftNumber, leftIndex => { 
+        for (var rightIndex = leftIndex + 1; rightIndex < numbers.length; rightIndex++){
+            const rightNumber = numbers[rightIndex] 
+            if (leftNumber + rightNumber == sum) {
+                pairs.push({
+                    pair : [leftNumber, rightNumber], 
+                    rightIndex
+                })
+            }  
+        }
+    });
+    let earliestPair = pairs[0]; 
+    for (var i=1; i < pairs.length; i++){
+        if (earliestPair.rightIndex > pairs[i].rightIndex){
+            earliestPair = pairs[i]
+        }
+    } 
+    return earliestPair.pair
+}
+console.log(sumPairs([11, 3, 7, 5]), 10)
