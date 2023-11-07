@@ -57,3 +57,40 @@ function getCount(str) {
 
 /////////////////////////////////// 
 
+function getCount(str) {
+    var vowelsCount = 0;
+    for (index in str) {
+        switch (str[index]) {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+                vowelsCount++;
+                break;
+        }
+    }
+    return vowelsCount;
+}
+
+// "ATTGC" --> "TAACG"
+// "GTAT" --> "CATA"
+
+function DNAStrand(dna) {
+    let complementDNA = ''
+    for (var i = 0; i < dna.length; i++) {
+        if (dna[i] == 'A') {
+            complementDNA += 'T'
+        }
+        else if (dna[i] == 'T') {
+            complementDNA += 'A'
+        }
+        else if (dna[i] == 'G') {
+            complementDNA += 'C'
+        }
+        else if (dna[i] == 'C') {
+            complementDNA += 'G'
+        }
+    }
+    return complementDNA
+}
