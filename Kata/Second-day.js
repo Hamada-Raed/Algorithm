@@ -53,7 +53,7 @@ function getCount(str) {
     }
 
     return vowelsCount;
-} 
+}
 
 /////////////////////////////////// 
 
@@ -100,13 +100,52 @@ function DNAStrand(dna) {
 function DNAStrand(dna) {
     let complementDNA = ''
     DNA = {
-        'A' : 'T', 
-        'T' : 'A', 
-        'C' : 'G', 
-        'G' : 'C', 
+        'A': 'T',
+        'T': 'A',
+        'C': 'G',
+        'G': 'C',
     }
-    for (var i=0; i<dna.length; i++){
+    for (var i = 0; i < dna.length; i++) {
         complementDNA += DNA[dna[i]]
     }
     return complementDNA
+}
+
+////////////////////// 
+function isValidWalk(walk) {
+    if (walk.length != 10) return false
+    let directions = {
+        'n': 0,
+        's': 0,
+        'e': 0,
+        'w': 0,
+    }
+    for (var i = 0; i < walk.length; i++) {
+        directions[walk[i]]++
+    }
+    if (directions.n - directions.s == 0 && directions.e - directions.w == 0) {
+        return true
+    }
+    else {
+        return false
+    }
+
+}
+
+///////////////////////////// 
+function isValidWalk(walk) {
+    var dx = 0
+    var dy = 0
+    var dt = walk.length
+
+    for (var i = 0; i < walk.length; i++) {
+        switch (walk[i]) {
+            case 'n': dy--; break
+            case 's': dy++; break
+            case 'w': dx--; break
+            case 'e': dx++; break
+        }
+    }
+
+    return dt === 10 && dx === 0 && dy === 0
 }
