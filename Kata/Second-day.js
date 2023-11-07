@@ -94,3 +94,19 @@ function DNAStrand(dna) {
     }
     return complementDNA
 }
+
+/////////////////////////////
+
+function DNAStrand(dna) {
+    let complementDNA = ''
+    DNA = {
+        'A' : 'T', 
+        'T' : 'A', 
+        'C' : 'G', 
+        'G' : 'C', 
+    }
+    for (var i=0; i<dna.length; i++){
+        complementDNA += DNA[dna[i]]
+    }
+    return complementDNA
+}
