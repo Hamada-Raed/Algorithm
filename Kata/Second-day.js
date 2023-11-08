@@ -198,3 +198,82 @@ function iqTest(numbers) {
 
 console.log(iqTest("2 4 7 8 10"), 3);
 console.log(iqTest("1 2 2"), 1);
+
+
+
+//////////////////////////////////////////////// 
+function pigIt(str) {
+    return str.split(' ').map(word => word.slice(1) + word[0] + 'ay').join(' ')
+}
+////////////////////////////////////////////////
+function pigIt(str) {
+    // a place to store the pig latin
+    let pigLatin = ''
+    let firstLetter = str[0];
+    // iterate over the string
+    for (let i = 1; i < str.length; i++) {
+        const currentLetter = str[i];
+        if (!firstLetter) {
+            firstLetter = currentLetter;
+            console.log(firstLetter)
+        } else {
+            if (currentLetter != ' ') {
+                // append each next letter until we see a space
+                pigLatin += currentLetter;
+            } else {
+                // append the current first letter and ay
+                pigLatin += firstLetter + 'ay ';
+                firstLetter = '';
+            }
+        }
+    }
+    pigLatin += firstLetter + 'ay';
+
+    return pigLatin;
+}
+
+
+//////////////////////////////////////////// 
+function pigIt(str) {
+    // a place to store the pig latin
+    let pigLatin = '';
+    let word = '';
+
+    // iterate over the string
+    for (let i = 0; i < str.length; i++) {
+        const currentLetter = str[i];
+
+        if (currentLetter != ' ') {
+            // if the current character is not a space, add it to the word
+            word += currentLetter;
+        } else {
+            // if it's a space, add the Pig Latin version of the word to pigLatin
+            if (word) {
+                if (word.match(/[a-zA-Z]/)) {
+                    pigLatin += word.slice(1) + word[0] + 'ay ';
+                } else {
+                    // If it contains non-alphabet characters, it's punctuation, so just add it to pigLatin
+                    pigLatin += word;
+                }
+                word = '';
+            } else {
+                // if it's a space and the word is empty, it's punctuation, so just add it to pigLatin
+                pigLatin += currentLetter;
+            }
+        }
+    }
+
+    // handle the last word if there are no spaces after it
+    if (word) {
+        if (word.match(/[a-zA-Z]/)) {
+            pigLatin += word.slice(1) + word[0] + 'ay';
+        } else {
+            // If it contains non-alphabet characters, it's punctuation, so just add it to pigLatin
+            pigLatin += word;
+        }
+    }
+
+    return pigLatin;
+}
+
+console.log(pigIt("O tempora o mores !")); // Output: "Oay emporatay oay oresmay !"
