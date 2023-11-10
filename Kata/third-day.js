@@ -12,3 +12,9 @@ function filter_list(l) {
     }
     return filtered
 }
+
+function filter_list(l) {
+    return l.filter((currentItem)=> {
+        return typeof currentItem === 'number'
+    })
+}
