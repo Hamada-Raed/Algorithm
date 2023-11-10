@@ -50,3 +50,64 @@ function countSmileys(arr) {
     }
     return count;
 }
+
+function countSmileys(arr) {
+    let count = 0;
+
+    const eyes = {
+        ':': true,
+        ';': true
+    };
+
+    const noses = {
+        '-': true,
+        '~': true
+    };
+
+    const mouths = {
+        ')': true,
+        'D': true
+    };
+
+    for (let i = 0; i < arr.length; i++) {
+        const face = arr[i];
+        if (face.length == 2) {
+            if (eyes[face[0]] && mouths[face[1]]) {
+                count++;
+            }
+        } else if (face.length == 3) {
+            if (eyes[face[0]] && noses[face[1]] && mouths[face[2]]) {
+                count++;
+            }
+        }
+    }
+
+    return count;
+} 
+
+
+
+/////////////////////////////////////// 
+
+// scramble('rkqodlw', 'world') ==> True
+// scramble('cedewaraaossoqqyt', 'codewars') ==> True
+// scramble('katas', 'steak') ==> False 
+
+function scramble(str1, str2) {
+    const LetterCount = {}
+    for (var i=0; i<str1.length; i++){
+        const currentLetter = str1[i]; 
+        LetterCount[currentLetter] = LetterCount[currentLetter] || 0; 
+        LetterCount[currentLetter]++
+    }
+    for (let i=0; i<str2.length; i++){
+        const currentLetter = str2[i]
+        if (LetterCount[currentLetter] > 0){
+            LetterCount[currentLetter]--
+        }
+        else {
+            return false
+        }
+    }
+    return true
+}
