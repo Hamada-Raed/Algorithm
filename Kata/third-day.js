@@ -129,4 +129,15 @@ function humanReadable(TotalSeconds) {
     const padNumber = (number) => number.toString().padStart(2, '0')
     return `${padNumber(hours)}:${padNumber(minutes)}:${padNumber(seconds)}`;
 }
-console.log(humanReadable(3660))
+console.log(humanReadable(3660)) 
+
+////////////////////////////////////////// 
+
+// maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4])
+// should be 6: [4, -1, 2, 1] 
+
+var maxSequence = function (arr) {
+    if (arr.length == 0){
+        return 0
+    }
+}
