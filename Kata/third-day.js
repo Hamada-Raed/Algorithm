@@ -111,3 +111,22 @@ function scramble(str1, str2) {
     }
     return true
 }
+
+
+// ////////////////////////////////// 
+// HH = hours, padded to 2 digits, range: 00 - 99
+// MM = minutes, padded to 2 digits, range: 00 - 59
+// SS = seconds, padded to 2 digits, range: 00 - 59
+ 
+function humanReadable(TotalSeconds) {
+    // get total hour by dividing by 3600 drop the reminder
+    const hours = Math.floor(TotalSeconds / 3600)
+    // get total minutes by divifing by 60 drop the reminder
+    const minutes = Math.floor((TotalSeconds % 3600) / 60)
+    // get total second is the previous reminder 
+    const seconds = (TotalSeconds % 3600) - minutes * 60
+    // to make the form as HH:MM:SS us the build-in function padStart()
+    const padNumber = (number) => number.toString().padStart(2, '0')
+    return `${padNumber(hours)}:${padNumber(minutes)}:${padNumber(seconds)}`;
+}
+console.log(humanReadable(3660))
