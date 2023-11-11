@@ -83,7 +83,7 @@ function countSmileys(arr) {
     }
 
     return count;
-} 
+}
 
 
 
@@ -95,14 +95,14 @@ function countSmileys(arr) {
 
 function scramble(str1, str2) {
     const LetterCount = {}
-    for (var i=0; i<str1.length; i++){
-        const currentLetter = str1[i]; 
-        LetterCount[currentLetter] = LetterCount[currentLetter] || 0; 
+    for (var i = 0; i < str1.length; i++) {
+        const currentLetter = str1[i];
+        LetterCount[currentLetter] = LetterCount[currentLetter] || 0;
         LetterCount[currentLetter]++
     }
-    for (let i=0; i<str2.length; i++){
+    for (let i = 0; i < str2.length; i++) {
         const currentLetter = str2[i]
-        if (LetterCount[currentLetter] > 0){
+        if (LetterCount[currentLetter] > 0) {
             LetterCount[currentLetter]--
         }
         else {
@@ -117,7 +117,7 @@ function scramble(str1, str2) {
 // HH = hours, padded to 2 digits, range: 00 - 99
 // MM = minutes, padded to 2 digits, range: 00 - 59
 // SS = seconds, padded to 2 digits, range: 00 - 59
- 
+
 function humanReadable(TotalSeconds) {
     // get total hour by dividing by 3600 drop the reminder
     const hours = Math.floor(TotalSeconds / 3600)
@@ -129,7 +129,7 @@ function humanReadable(TotalSeconds) {
     const padNumber = (number) => number.toString().padStart(2, '0')
     return `${padNumber(hours)}:${padNumber(minutes)}:${padNumber(seconds)}`;
 }
-console.log(humanReadable(3660)) 
+console.log(humanReadable(3660))
 
 ////////////////////////////////////////// 
 
@@ -137,7 +137,41 @@ console.log(humanReadable(3660))
 // should be 6: [4, -1, 2, 1] 
 
 var maxSequence = function (arr) {
-    if (arr.length == 0){
-        return 0
+    let maxSum = 0;
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = i; j < arr.length; j++) {
+            let currentSum = 0;
+            let subArray = [];
+            for (var k = i; k < j; k++) {
+                currentSum += arr[k]
+            }
+            if (currentSum > maxSum) {
+                maxSum = currentSum;
+            }
+        }
     }
+    return maxSum
+}
+console.log(maxSequence([1, 2, 3, 4, 5])) 
+
+
+////////////////////////////////////// 
+
+var maxSequence = function (arr) {
+    // place keep track of currentSum // initialize to 0
+    let currentSum = 0;
+    // place to keep track of maxSum // initialize to 0
+    let maxSum = 0;
+
+    // iterate over array
+    for (let i = 0; i < arr.length; i++) {
+        const currentNumber = arr[i];
+        // set currentSum to max of currentSum + currentNumber and 0
+        currentSum = Math.max(currentSum + currentNumber, 0);
+        console.log(currentSum, currentNumber)
+        // set maxSum to max of currentSum and maxSum
+        maxSum = Math.max(currentSum, maxSum);
+    }
+
+    return maxSum;
 }
