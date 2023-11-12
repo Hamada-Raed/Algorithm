@@ -29,5 +29,16 @@ function sumTwoSmallestNumbers(numbers) {
 // "1" -- > "1"
 // "" -- > ""
 function maskify(cc) {
-    
+    let masked = ''; 
+    for (var i=cc.length -1; i>=0; i--){
+        const currentItem = cc[i]
+        if (i > cc.length -4){
+            masked += currentItem
+        }
+        else {
+            masked += '#' 
+        }
+    }
+    return masked
 }
+console.log(maskify('11111'))
