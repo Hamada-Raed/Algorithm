@@ -41,4 +41,19 @@ function maskify(cc) {
     }
     return masked
 }
-console.log(maskify('11111'))
+console.log(maskify('11111')) 
+
+///////////////////////////////////////// 
+
+// Create Phone Number
+// createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) // => returns "(123) 456-7890"
+
+function createPhoneNumber(numbers) {
+    let phoneNumber = '(' 
+    phoneNumber += numbers[0] + numbers[1] + numbers[2] 
+    phoneNumber += ') '
+    phoneNumber += numbers[3] + numbers[4] + numbers[5]
+    phoneNumber += '-' 
+    phoneNumber += numbers[6] + numbers[7] + numbers[8] + numbers[9] 
+    return phoneNumber
+}
