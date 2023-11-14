@@ -123,4 +123,28 @@ var moveZeros = function (arr) {
 }
 
 console.log(JSON.stringify(moveZeros([1, 2, 1, 0, 1, 0, 3, 0, 1, 0]))),
-    console.log(JSON.stringify([1, 2, 1, 1, 3, 1, 0, 0, 0, 0]))
+console.log(JSON.stringify([1, 2, 1, 1, 3, 1, 0, 0, 0, 0])) 
+
+///////////////////////////////////// 
+// Given two integers a and b, which can be positive or negative, 
+// find the sum of all the integers between and including them and return it. 
+// If the two numbers are equal return a or b.
+
+function getSum(a, b) {
+    let sum = 0;
+    if (a = b) {
+        return a
+    }
+    else if (a > b) {
+        for (var i = b; i <= a; i++) {
+            sum += i
+        }
+    }
+    else if (a < b) {
+        for (var i = a; i <= b; i++) {
+            sum += i
+        }
+    }
+
+    return sum
+}
