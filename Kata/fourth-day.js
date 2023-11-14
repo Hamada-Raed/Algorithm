@@ -148,3 +148,18 @@ function getSum(a, b) {
 
     return sum
 }
+
+/////////////////////////////////// 
+
+function GetSum(a,b){
+    smallest = Math.min(a,b)
+    largest = Math.max(a,b) 
+    let sum = 0;
+    if (smallest = largest) {
+        return smallest
+    }
+    for (var i=smallest; i<= largest; i++){
+        sum += i
+    }
+    return sum
+}
