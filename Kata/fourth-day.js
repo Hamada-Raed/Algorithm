@@ -162,4 +162,52 @@ function GetSum(a,b){
         sum += i
     }
     return sum
+} 
+
+
+//////////////////////////// 
+// Moving Zeros To The End 
+
+function moveZeros(arr) {
+    // a place to store the movedZero array
+    let movedZeros = []; 
+    // a place to store the zero count
+    let CountZero = 0;  
+    // iterate over the arr
+    for (var i=0; i<arr.length; i++){
+        // if current value is not a zero 
+        if (arr[i] !== 0){
+            // push it the movedZero
+            movedZeros.push(arr[i])
+        }
+        // else 
+        else {
+            // increment zero count
+            CountZero++
+        }
+    } 
+    // iterate up to zero count 
+    for (var i=0; i<CountZero; i++){
+        // push zero into the array 
+        movedZeros.push(0)
+    }
+    // return the movedZero array
+    return movedZeros
+}
+
+var moveZeros = function (arr) {
+    let zeroCount = 0;
+    for (let i = 0; i < arr.length - zeroCount; i++) {
+        const value = arr[i];
+        if (value === 0) {
+            for (let j = i; j < arr.length - 1 - zeroCount; j++) {
+                arr[j] = arr[j + 1];
+                arr[arr.length - 1 - zeroCount] = 0;
+            }
+            zeroCount++;
+            i--;
+        }
+    }
+
+    return arr;
 }
