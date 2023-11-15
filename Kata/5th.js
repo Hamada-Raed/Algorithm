@@ -49,3 +49,22 @@ function solution(number) {
     return sum
 }
 console.log(solution(10))
+
+/////////////////////////////////////////////// 
+
+// Convert string to camel case 
+// "the-stealth-warrior" gets converted to "theStealthWarrior"
+
+function toCamelCase(str) {
+    // split the str by _ or - named words 
+    const words = str.split(/-|_/g)
+    // a place to store the camel case 
+    let camelCase = words[0]
+    // iterate over the words
+    for (var i =1; i < words.length; i++) {
+        camelCase += words[i][0].toUpperCase() + words[i].slice(1)
+    }
+    return camelCase
+}
+console.log(toCamelCase('the_stealth_warrior'))
+
