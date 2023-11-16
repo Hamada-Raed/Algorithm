@@ -66,5 +66,14 @@ function toCamelCase(str) {
     }
     return camelCase
 }
-console.log(toCamelCase('the_stealth_warrior'))
+console.log(toCamelCase('the_stealth_warrior')) 
+
+
+////////////////////////// 
+function toCamelCase(str) {
+    var regExp = /[-_]\w/ig;
+    return str.replace(regExp, function (match) {
+        return match.charAt(1).toUpperCase();
+    });
+}
 
