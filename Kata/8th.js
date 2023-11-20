@@ -12,3 +12,14 @@ function anagrams(word, words) {
     }
     return anagram
 }
+
+/////////////////////////////// 
+// RGB To Hex Conversion
+// 255, 255, 255 -- > "FFFFFF"
+// 255, 255, 300 -- > "FFFFFF"
+// 0, 0, 0       -- > "000000"
+// 148, 0, 211   -- > "9400D3"
+
+function rgb(r, g, b) {
+    return "FFFFFF";
+}
