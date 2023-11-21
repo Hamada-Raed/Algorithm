@@ -28,3 +28,7 @@ const convert = value => toHex(withinRange(value))
 function rgb(r, g, b) {
     return `${convert(r)}${convert(g)}${convert(b)}`
 }
+
+//////////////////////////////////////////////////// 
+
+// Growth of a Population
