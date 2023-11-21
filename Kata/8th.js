@@ -39,11 +39,25 @@ function rgb(r, g, b) {
 
 function nbYear(p0, percent, aug, p) {
     let TotalYear = 0; 
+    
     const getNextPopluation = current => current + (current * percent/100) + aug
-
     while (p0 < p){
         p0 = getNextPopluation(p0)
         TotalYear +=1
     }
     return TotalYear
+}
+
+///////////////////////////////////////////////////////////// 
+
+const getNextPopluation = current => current + (current * percent / 100) + aug
+
+function nbYear(p0, percent, aug, p, totalYear) {
+    let totalYear  = totalYear || 0;
+    if (p0 < p){
+        const newtPopulation = getNextPopluation(p0)
+        totalYear++
+        return nbYear(newtPopulation, percent, aug, p, totalYear)
+    }
+    return totalYear
 }
