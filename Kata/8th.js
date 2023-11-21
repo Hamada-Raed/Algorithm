@@ -32,3 +32,18 @@ function rgb(r, g, b) {
 //////////////////////////////////////////////////// 
 
 // Growth of a Population
+
+// Examples:
+// nb_year(1500, 5, 100, 5000) -> 15
+// nb_year(1500000, 2.5, 10000, 2000000) -> 10
+
+function nbYear(p0, percent, aug, p) {
+    let TotalYear = 0; 
+    const getNextPopluation = current => current + (current * percent/100) + aug
+
+    while (p0 < p){
+        p0 = getNextPopluation(p0)
+        TotalYear +=1
+    }
+    return TotalYear
+}
