@@ -113,5 +113,39 @@ function order(words) {
     }
     return result.trim()
 }
-console.log(order('is2 Thi1s T4est 3a'))
+console.log(order('is2 Thi1s T4est 3a')) 
+
+
+////////////////////////////////////////////// 
+
+function order(words) {
+    if (!words) return '';
+
+    let splitWords = words.split(' ');
+    let dict = {};
+
+    for (var i = 0; i < splitWords.length; i++) {
+        const word = splitWords[i];
+
+        for (var j = 0; j < word.length; j++) {
+            const letter = word[j];
+            const digit = parseInt(letter);
+
+            if (!isNaN(digit)) {
+                dict[digit] = word;
+                break;  // Assuming there is only one consecutive number in each word
+            }
+        }
+    }
+
+    let result = '';
+    for (var num in dict) {
+        result += dict[num] + ' ';
+    }
+
+    return result.trim();
+}
+
+console.log(order('is2 Thi1s T4est 3a'));
+
 
