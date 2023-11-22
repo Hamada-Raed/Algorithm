@@ -64,3 +64,19 @@ function nbYear(p0, percent, aug, p) {
     }
     return years
 }
+
+
+/////////////////////////////////////////////////////////////////// 
+
+// Your order, please 
+
+// example "is2 Thi1s T4est 3a"  -- > "Thi1s is2 3a T4est"
+
+function order(words) {
+    let splitWord = words.split(' '); 
+    let orderWords = []; 
+    for (var i=0; i<words.length; i++){
+        console.log(words[i])
+    }
+}
+order('is2 Thi1s T4est 3a')
