@@ -73,10 +73,45 @@ function nbYear(p0, percent, aug, p) {
 // example "is2 Thi1s T4est 3a"  -- > "Thi1s is2 3a T4est"
 
 function order(words) {
-    let splitWord = words.split(' '); 
-    let orderWords = []; 
-    for (var i=0; i<words.length; i++){
-        console.log(words[i])
+    if (!words) return ''; 
+    let spltiWords = words.split(' ');
+    let dict = []; 
+    for (var i=0; i<spltiWords.length; i++){
+        const word = spltiWords[i]
+        for (var j=0; j<word.length; j++){
+            const letter = word[j];
+            const digit = letter.charCodeAt(j);
+            if (digit >= 48  || digit <= 57){
+                dict.push({
+                    digit : word 
+                }) 
+            }
+        }
     }
+    return dict
 }
-order('is2 Thi1s T4est 3a')
+order('Thi1s is2 3a T4est"')
+////////////////////////////////////////////////////
+
+function order(words) {
+    if (!words) return '';
+    let spltiWords = words.split(' ');
+    let dict = {};
+    for (var i = 0; i < spltiWords.length; i++) {
+        const word = spltiWords[i]
+        for (var j = 0; j < word.length; j++) {
+            const letter = word[j]
+            const digit = letter.charCodeAt()
+            if (digit > 47 && digit < 57) {
+                dict[digit] = word
+            }
+        }
+    }
+    let result = ''
+    for (var word in dict) {
+        result += dict[word] + ' '
+    }
+    return result.trim()
+}
+console.log(order('is2 Thi1s T4est 3a'))
+
