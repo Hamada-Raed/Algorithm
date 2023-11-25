@@ -20,3 +20,13 @@ function comp(array1, array2) {
 
     return false;
 }
+
+////////////////
+
+// Rot13  
+// ROT13 is a simple letter substitution cipher that replaces a letter with the letter 
+// 13 letters after it in the alphabet.ROT13 is an example of the Caesar cipher. 
+
+function rot13(message) {
+    
+}
