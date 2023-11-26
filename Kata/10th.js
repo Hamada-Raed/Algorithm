@@ -41,3 +41,32 @@ function squareSum(numbers) {
     }
     return sum
 }
+
+//////////////////////////// 
+
+// reverse str  
+
+// "This is an example!" ==> "sihT si na !elpmaxe" 
+
+function reverseWords(str) {
+    // Split the string into words
+    const words = str.split(' ');
+
+    // Reverse each word
+    const reversedWords = words.map(word => reverseWord(word));
+
+    // Join the reversed words back into a string
+    const reversedString = reversedWords.join(' ');
+
+    return reversedString;
+}
+
+function reverseWord(word) {
+    // Convert the word to an array of characters, reverse it, and join it back
+    return word.split('').reverse().join('');
+}
+
+// Example usage
+const inputString = "Hello World";
+const reversedString = reverseWords(inputString);
+console.log(reversedString);  // Output: "olleH dlroW"
