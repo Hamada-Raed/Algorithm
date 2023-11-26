@@ -84,3 +84,27 @@ function reverseWords(str) {
 function getASCII(c) {
     return c.charCodeAt()
 }
+
+//////////////////////////////// 
+
+// find the uniqe number  
+
+function findUniq(arr) {
+    let numbers = {}
+    for (var i = 0; i < arr.length; i++) {
+        const currentNumber = arr[i]
+        if (!numbers[currentNumber]) {
+            numbers[currentNumber] = 1
+        }
+        else {
+            numbers[currentNumber]++
+        }
+    }
+    let uniq = 0
+    for (var num in numbers) {
+        if (numbers[num] == 1) {
+            uniq = num
+        }
+    }
+    return +uniq
+}
