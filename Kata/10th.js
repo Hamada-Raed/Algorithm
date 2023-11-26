@@ -69,4 +69,11 @@ function reverseWord(word) {
 // Example usage
 const inputString = "Hello World";
 const reversedString = reverseWords(inputString);
-console.log(reversedString);  // Output: "olleH dlroW"
+console.log(reversedString);  // Output: "olleH dlroW" 
+///////////////////////
+
+function reverseWords(str) {
+    return str.split(' ').map(function (word) {
+        return word.split('').reverse().join('');
+    }).join(' ');
+}
