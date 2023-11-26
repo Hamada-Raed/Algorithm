@@ -28,5 +28,16 @@ function comp(array1, array2) {
 // 13 letters after it in the alphabet.ROT13 is an example of the Caesar cipher. 
 
 function rot13(message) {
-    
+
+}
+
+
+///////// 
+
+function squareSum(numbers) {
+    let sum = 0;
+    for (var i = 0; i < numbers.length; i++) {
+        sum += numbers[i] * numbers[i]
+    }
+    return sum
 }
