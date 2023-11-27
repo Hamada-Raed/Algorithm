@@ -111,14 +111,22 @@ function findUniq(arr) {
 
 ///////////////////////////////////////////////// 
 
+// Given 2 strings, a and b, return a string of the form short + long + short,
+//  with the shorter string on the outside and the longer string on the inside.
+//  The strings will not be the same length, but they may be empty(zero length). 
 
-// Reverse or rotate ? 
-
-// The input is a string str of digits.Cut the string into 
-// chunks(a chunk here is a substring of the initial string) of 
-// size sz(ignore the last chunk if its size is less than sz). 
-
-function revrot(str, sz) {
-    // your code
+function solution(a, b) {
+    let result = ""
+    if (a.length <= b.length) {
+        result += a.toString() + b.toString() + a.toString()
+    }
+    if (b.length <= a.length) {
+        result += b.toString() + a.toString() + b.toString()
+    }
+    return result
 }
+console.log(solution('45', '1')) 
+
+
+
 
