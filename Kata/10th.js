@@ -76,7 +76,7 @@ function reverseWords(str) {
     return str.split(' ').map(function (word) {
         return word.split('').reverse().join('');
     }).join(' ');
-} 
+}
 
 ////////////////////////// 
 
@@ -107,7 +107,7 @@ function findUniq(arr) {
         }
     }
     return +uniq
-} 
+}
 
 ///////////////////////////////////////////////// 
 
@@ -125,7 +125,7 @@ function solution(a, b) {
     }
     return result
 }
-console.log(solution('45', '1'))  
+console.log(solution('45', '1'))
 
 ////////////////////////////////////// 
 
@@ -204,6 +204,17 @@ function rot13(message) {
 
 console.log(rot13('grfg'), 'test');
 console.log(rot13('Grfg'), 'Test');
+
+///////////////////////////////////////// 
+
+function boolToWord(bool) {
+    if (bool == true) {
+        return "Yes"
+    }
+    else {
+        return "No"
+    }
+}
 
 
 
