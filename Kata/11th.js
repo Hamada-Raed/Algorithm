@@ -14,3 +14,8 @@ function findAverage(array) {
 
     return sum / array.length;
 }
+
+// split string 
+function stringToArray(string) {
+    return string.split(' ')
+}
