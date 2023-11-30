@@ -31,3 +31,27 @@ function correct(string) {
     string = string.replace(/1/g, 'I')
     return string
 }
+
+function correct(string) {
+    let str = '';
+    for (var i = 0; i < string.length; i++) {
+        var currentLetter = string[i];
+        switch (currentLetter) {
+            case '5':
+                currentLetter = 'S';
+                break;
+            case '0':
+                currentLetter = 'O';
+                break;
+            case '1':
+                currentLetter = 'I';
+                break;
+            // Add break statements to prevent fall-through
+        }
+        str += currentLetter; // Append the corrected or unchanged letter
+    }
+    return str;
+}
+
+console.log(correct('H5ama1a'));
+
