@@ -55,3 +55,10 @@ function correct(string) {
 
 console.log(correct('H5ama1a'));
 
+
+// Does my number look big in this? 
+
+function narcissistic(value) {
+
+}
+
