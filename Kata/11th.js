@@ -60,6 +60,14 @@ console.log(correct('H5ama1a'));
 // 1 ^ 4 + 6 ^ 4 + 5 ^ 4 + 2 ^ 4 = 1 + 1296 + 625 + 16 = 1938, where 4 is the length of (1642)
 
 function narcissistic(value) {
-
+    const length = Math.floor(Math.log10(Math.abs(value))) + 1; // to get the length of number; 
+    let sum = 0 ;
+    let digits = value; 
+    while (digits > 0){
+        const digit = digits % 10
+        sum += Math.pow(digit, length); 
+        digits = Math.floor (digits / 10) 
+    }
+    return sum  == value
 }
 
