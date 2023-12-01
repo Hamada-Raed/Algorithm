@@ -57,6 +57,7 @@ console.log(correct('H5ama1a'));
 
 
 // Does my number look big in this? 
+// 1 ^ 4 + 6 ^ 4 + 5 ^ 4 + 2 ^ 4 = 1 + 1296 + 625 + 16 = 1938, where 4 is the length of (1642)
 
 function narcissistic(value) {
 
