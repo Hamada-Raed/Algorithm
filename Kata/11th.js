@@ -70,4 +70,9 @@ function narcissistic(value) {
     }
     return sum  == value
 }
+//////// 
+
+function multiply(a, b) {
+    return a * b
+}
 
