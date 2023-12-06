@@ -90,3 +90,14 @@ console.log(dblLinear(100), 447);
 // assign your RegExp to REGEXP:
 const REGEXP = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/;
 
+
+// Small enough? - Beginner 
+
+function smallEnough(a, limit) {
+    for (var i=0; i<a.length; i++){
+        if (a[i] > limit){
+            return false
+        }
+    }
+    return true
+}
