@@ -100,4 +100,25 @@ function smallEnough(a, limit) {
         }
     }
     return true
+} 
+
+
+// Triangle area 
+
+function tArea(tStr) {
+    let count = 0;
+    for (var i = 0; i < tStr.length; i++) {
+        if (tStr[i] == '\n') {
+            count++
+        }
+    }
+    count = count - 2
+    return 0.5 * Math.pow(count, 2)
 }
+
+function tArea(tStr) {
+    const side = tStr.split('\n').length - 3
+    return (side * side) / 2
+} 
+
+
