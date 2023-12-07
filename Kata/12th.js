@@ -133,3 +133,16 @@ function getSolution(arr, sum) {
 }
 console.log(getSolution([1, 3, 4, 6, 8], 20))
 
+// Find the remainder 
+
+function remainder(n, m) {
+    let largerst = Math.max(n, m);
+    if (largerst == n) {
+        return n % m
+    }
+    else {
+        return m % n
+    }
+}
+
+
