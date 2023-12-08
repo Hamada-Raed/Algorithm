@@ -145,4 +145,24 @@ function remainder(n, m) {
     }
 }
 
+// 
+
+function min(arr, toReturn) {
+    let smallest = arr[0];
+    let index = 0;
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] <= smallest) {
+            smallest = arr[i]
+            index = i
+        }
+    }
+    if (toReturn == 'value') {
+        return smallest;
+    }
+    else if (toReturn == 'index') {
+        return index
+    }
+}
+console.log(min([1, 2, 3, 4, 0], 'value'))
+
 
