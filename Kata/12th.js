@@ -165,4 +165,12 @@ function min(arr, toReturn) {
 }
 console.log(min([1, 2, 3, 4, 0], 'value'))
 
+// simple validation of a username with regex 
+
+function validateUsr(username) {
+    const regex = /^[a-z0-9_]{4,16}$/;
+    return regex.test(username);
+}
+
+
 
