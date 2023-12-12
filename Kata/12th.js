@@ -172,5 +172,21 @@ function validateUsr(username) {
     return regex.test(username);
 }
 
+// XO 
+
+function XO(str) {
+    let xcount = 0; 
+    let ocount = 0; 
+  for (var i=0; i<str.length; i++){
+    if (str[i] == 'X' || str[i] == 'x'){
+        xcount++
+    }
+    else if (str[i] == 'O' || str[i] == 'o'){
+      ocount++
+    }
+  }
+  if (ocount == xcount) return true
+  return false
+}
 
 
