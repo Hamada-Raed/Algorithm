@@ -23,4 +23,22 @@ function divisors(integer) {
     return divisorsArr
 };
 
-// 
+// Stop gninnipS My sdroW! 
+function reverseSting(input){
+    return input.split(' ').revers().join('')
+}
+function spinWords(string) {
+    let result = ''; 
+    const words = string.split(' '); 
+    for (var i=0; i<words.length; i++){
+        let word = words[i]
+        if (word.length >4){
+            const reversed = reverseSting(words[i])
+            result +=  reversed
+        }
+        else{
+            result +=   words[i]
+        }
+    }
+    return result
+}
