@@ -24,21 +24,21 @@ function divisors(integer) {
 };
 
 // Stop gninnipS My sdroW! 
-function reverseSting(input){
-    return input.split(' ').revers().join('')
+function reverseString(input) {
+    return input.split('').reverse().join('');
 }
+
 function spinWords(string) {
-    let result = ''; 
-    const words = string.split(' '); 
-    for (var i=0; i<words.length; i++){
-        let word = words[i]
-        if (word.length >4){
-            const reversed = reverseSting(words[i])
-            result +=  reversed
+    let result = '';
+    const words = string.split(' ');
+
+    for (var i = 0; i < words.length; i++) {
+        let word = words[i];
+        if (word.length >= 5) {
+            word = reverseString(word);
         }
-        else{
-            result +=   words[i]
-        }
+        result += ' ' + word; // Add the modified or unmodified word to the result
     }
-    return result
+
+    return result.trim();
 }
