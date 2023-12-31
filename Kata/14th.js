@@ -27,6 +27,17 @@ function divisors(integer) {
 }; 
 
 
+function squareDigits(num) {
+    let number = '' + num
+    let result = "";
+
+    for (var i = 0; i < number.length; i++) {
+        result += "" + number[i] ** 2
+    }
+    return Number(result)
+}
+console.log(squareDigits(3213)) 
+
 
 
 
