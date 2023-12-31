@@ -10,6 +10,25 @@ function isPrime(num) {
     }
 
     return true; // If not divisible by any number in the loop, it's prime
-}
+} 
 
-console.log(isPrime(9))
+
+function divisors(integer) {
+    const divs = []; 
+    for (var i=2; i<integer/2 ; i++){
+        if (integer % i == 0 ){
+            divs.push(i)
+        }
+    }
+    if (divs.length == 0){
+        return integer + ' is prime'
+    }
+    return divs
+}; 
+
+
+
+
+
+
+
