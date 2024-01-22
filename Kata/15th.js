@@ -12,3 +12,18 @@ function pofi(n) {
 // Example usage:
 const result = pofi(5);
 console.log(result);  // Output: '-i'
+
+////////////////////////////////////////////////
+
+function catchSignChange(arr) {
+    let signChanges = 0;
+
+    for (let i = 1; i < arr.length; i++) {
+        if ((arr[i] >= 0 && arr[i - 1] < 0) || (arr[i] < 0 && arr[i - 1] >= 0)) {
+            signChanges++;
+        }
+    }
+
+    return signChanges;
+
+}
