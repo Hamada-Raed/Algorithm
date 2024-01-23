@@ -27,3 +27,31 @@ function catchSignChange(arr) {
     return signChanges;
 
 }
+
+///////////////////////// 
+
+function calculate(str) {
+    const sanitizedStr = str.replace(/plus/g, '+').replace(/minus/g, '-');
+
+    // Split the sanitized string into an array of terms
+    const terms = sanitizedStr.split(/([+-])/);
+
+    // Initialize the result with the first term
+    let result = parseInt(terms[0]);
+
+    // Loop through the terms, starting from index 1 with a step of 2
+    for (let i = 1; i < terms.length; i += 2) {
+        const operator = terms[i];
+        const operand = parseInt(terms[i + 1]);
+
+        // Perform addition or subtraction based on the operator
+        if (operator === '+') {
+            result += operand;
+        } else if (operator === '-') {
+            result -= operand;
+        }
+    }
+
+    // Convert the result to a string and return it
+    return result.toString();
+}
