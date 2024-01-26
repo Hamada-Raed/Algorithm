@@ -55,3 +55,9 @@ function calculate(str) {
     // Convert the result to a string and return it
     return result.toString();
 }
+
+///////////////////////////
+
+function rowSumOddNumbers(n) {
+    return Math.pow(n, 3)
+}
