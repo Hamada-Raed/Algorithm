@@ -3,7 +3,7 @@ function pofi(n) {
     const powerOfI = n % 4;
 
     // Define the mapping for powers of i
-    const mapping = {0: '1', 1: 'i', 2: '-1', 3: '-i'};
+    const mapping = { 0: '1', 1: 'i', 2: '-1', 3: '-i' };
 
     // Return the result as a string
     return mapping[powerOfI];
@@ -61,3 +61,26 @@ function calculate(str) {
 function rowSumOddNumbers(n) {
     return Math.pow(n, 3)
 }
+
+
+/////////////////////////////
+
+function list(names) {
+    // a place to store the sent 
+    let sentence = ' ';
+    //itereate over the names
+    for (var i = 0; i < names.length; i++) {
+        const { name } = names[i]
+        if (i == names.length - 1) {
+            sentence += name
+        }
+        else if (i == names.length - 2) {
+            sentence += name + ' & '
+        }
+        else {
+            sentence += name + ', '
+        }
+    }
+    return sentence.trim()
+}
+console.log(list([{ name: 'hamda' }, { name: 'hamda' }, { name: 'hamda' }, { name: 'hamda' }, { name: 'hamda' }]))
