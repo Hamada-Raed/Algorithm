@@ -31,3 +31,21 @@ console.log(solution([1, 2, 3]), false);
 console.log(solution([1, 2, 3, 6, 5, 6]), true);
 console.log(solution(['a', 'b', 'c', 'a']), true);
 console.log(solution([1, 2, 3, 'a', 'b']), false);
+
+
+////////////////////// 
+
+
+function solution() {
+    const seen = new Set();
+    for (let i = 0; i < arguments.length; i++) {
+        if (seen.has(arguments[i])) {
+            return true;
+        }
+        seen.add(arguments[i]);
+    }
+    return false;
+}
+
+
+
