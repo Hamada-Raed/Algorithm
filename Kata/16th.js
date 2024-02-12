@@ -7,4 +7,27 @@ function solution(number) {
     }
     return sum
 }
-console.log(solution(10))
+console.log(solution(10)) 
+
+
+//////////////////////// 
+
+function solution(numbers) {
+    let dict = {}
+    for (var i = 0; i < numbers.length; i++) {
+        const num = numbers[i]
+        if (!dict[num]) {
+            dict[num] = 1
+        }
+        else {
+            dict[num] += 1
+            return true
+        }
+    }
+    return false
+}
+
+console.log(solution([1, 2, 3]), false);
+console.log(solution([1, 2, 3, 6, 5, 6]), true);
+console.log(solution(['a', 'b', 'c', 'a']), true);
+console.log(solution([1, 2, 3, 'a', 'b']), false);
