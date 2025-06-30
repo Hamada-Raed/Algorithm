@@ -9,7 +9,6 @@
 function decode(message){
     let shifted_num = 25
     let message_number = message.split("").map(char => char.charCodeAt())
-    console.log(message_number)
     decoded_message  = ""
     let message_latter = message_number.map(num =>{
         if (num == 32){
