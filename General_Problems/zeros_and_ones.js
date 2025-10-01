@@ -1,0 +1,17 @@
+// Given an array containing only zeros and ones, find the index of the 
+// zero that, if converted to one, will make the longest sequence of ones.
+
+// For instance, given the array:
+
+// [1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1]
+// replacing the zero at index 10 (counting from 0) forms a sequence of 9 ones:
+
+
+
+function replaceZero(arr){
+    
+}
+
+console.log(replaceZero([1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1])) //10
+
+
